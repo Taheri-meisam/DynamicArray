@@ -32,6 +32,49 @@ DArray<T>::DArray()
 template<class T>
 void DArray<T>::instertAt(int index, T value)
 {
+	expand();
+	int arrmax = ArrayMax - 1;
+	bool flagInsert = false;
+	if (index <0 || index > ArrayMax)
+		throw "Out of boundry";
+	T* tempArray = new T[ArrayMax];
+	size_t i = 0;
+	if (index == 0 && flagInsert==false) {
+		tempArray[0] = value;
+		i++;
+		flagInsert == true;
+		for (i; i < ArrayMax; i++) {
+			tempArray[i] = Arr[i-1];
+		}
+
+	}
+	if(index != arrmax && flagInsert == false ){
+		for (i; i < arrmax; i++) {
+			if (i != index && flagInsert == false) {
+				tempArray[i] = Arr[i];
+			}
+			if (i == index && flagInsert == false) {
+
+				tempArray[i] = value;
+				i++;
+				flagInsert = true;
+			}
+			if (flagInsert == true) {
+				tempArray[i] = Arr[i - 1];
+			}
+		}
+	}
+	if (index == arrmax) {
+		for (i; i < arrmax; i++) {
+			tempArray[i] = Arr[i];
+		}
+		tempArray[arrmax] = value;
+
+	}
+	delete[] Arr;
+	Arr = tempArray;
+
+
 }
 
 template<class T>
@@ -141,10 +184,32 @@ int main() {
 	Arr1.addValue(4);
 	Arr1.addValue(5);
 	Arr1.addValue(6);
-	Arr1.removeAt(0);
+
+
+	Arr1.instertAt(6, 2000);
+	std::cout << "Number of elements :" << Arr1.RetNumOfElements()<< std::endl;
+
+
+
 	for (size_t i = 0; i < Arr1.RetNumOfElements(); i++) {
 		std::cout << "Index  " << i << " -> " << Arr1.getAt(i) << std::endl;
 	}
+	std::cout << "=====@@@@@@@@@@@@@=" << std::endl;
+
+	//Arr1.removeAt(0);
+	for (size_t i = 0; i < Arr1.RetNumOfElements(); i++) {
+		std::cout << "Index  " << i << " -> " << Arr1.getAt(i) << std::endl;
+	}
+
+	std::cout << "==================================" << std::endl;
+
+	Arr1.instertAt(0, 8);
+	for (size_t i = 0; i < Arr1.RetNumOfElements(); i++) {
+		std::cout << "Index  " << i << " -> " << Arr1.getAt(i) << std::endl;
+	}
+
+
+
 	Arr1.PopBack();
 
 	Arr1.removeAt(1);

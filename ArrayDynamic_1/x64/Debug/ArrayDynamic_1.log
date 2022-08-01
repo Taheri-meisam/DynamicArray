@@ -1,5 +1,19 @@
 ﻿  main.cpp
-C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(146,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(155,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(158,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(193,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(199,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(206,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(218,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(221,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(45,14): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(34): message : while compiling class template member function 'void DArray<int>::instertAt(int,T)'
+          with
+          [
+              T=int
+          ]
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(189): message : see reference to function template instantiation 'void DArray<int>::instertAt(int,T)' being compiled
+          with
+          [
+              T=int
+          ]
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(180): message : see reference to class template instantiation 'DArray<int>' being compiled
   ArrayDynamic_1.vcxproj -> C:\Users\VR_MT\source\repos\ArrayDynamic_1\x64\Debug\ArrayDynamic_1.exe
