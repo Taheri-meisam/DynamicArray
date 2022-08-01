@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(146,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(155,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\VR_MT\source\repos\ArrayDynamic_1\ArrayDynamic_1\main.cpp(158,61): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  ArrayDynamic_1.vcxproj -> C:\Users\VR_MT\source\repos\ArrayDynamic_1\x64\Debug\ArrayDynamic_1.exe
