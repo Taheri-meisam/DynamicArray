@@ -11,6 +11,7 @@ public:
 	int RetNumOfElements() const;
 	T getAt(int index);
 	void PopBack();
+	bool RemoveElement(int indexOfItem);
 	~DArray();
 	T* Arr;
 private:
@@ -22,7 +23,7 @@ private:
 
 
 template<class T>
-DArray<T>::DArray()
+DArray<T>::DArray() 
 {
 	this->ArrayMax = 1;
 	this->NumOfElements = 0;
@@ -42,7 +43,7 @@ void DArray<T>::instertAt(int index, T value)
 	if (index == 0 && flagInsert==false) {
 		tempArray[0] = value;
 		i++;
-		flagInsert == true;
+		flagInsert = true;
 		for (i; i < ArrayMax; i++) {
 			tempArray[i] = Arr[i-1];
 		}
@@ -168,6 +169,18 @@ void DArray<T>::PopBack()
 }
 
 template<class T>
+bool DArray<T>::RemoveElement(int indexOfItem)
+{
+	if (indexOfItem < 0 || indexOfItem >= ArrayMax) {
+		throw "out of the array boundry";
+		return false;
+	}
+	memmove(Arr + 1, Arr, sizeof(T) * indexOfItem);
+	Arr[0] = NULL;
+	return true;
+}
+
+template<class T>
 DArray<T>::~DArray()
 {
 	delete[] this->Arr;
@@ -184,7 +197,17 @@ int main() {
 	Arr1.addValue(4);
 	Arr1.addValue(5);
 	Arr1.addValue(6);
+	try {
+		Arr1.RemoveElement(6);
+	}
+	catch (...) {
+		std::cout << "Out of boundry index at RemoveElement function  !!!" << std::endl;
+	}
 
+	for (size_t i = 0; i < Arr1.RetNumOfElements(); i++) {
+		std::cout << "Index  " << i << " -> " << Arr1.getAt(i) << std::endl;
+	}
+	std::cout << "Memmove ------" << std::endl;
 
 	Arr1.instertAt(6, 2000);
 	std::cout << "Number of elements :" << Arr1.RetNumOfElements()<< std::endl;
@@ -222,6 +245,17 @@ int main() {
 	for (size_t i = 0; i < charArray.RetNumOfElements(); i++) {
 		std::cout << "Index  " << i << " -> " << charArray.getAt(i) << std::endl;
 	}
+
+	DArray<float> floatArray;
+
+	for (int i = 0; i < 10; i++) {
+		floatArray.addValue(i * 2.2);
+	}
+
+	for (size_t i = 0; i < floatArray.RetNumOfElements(); i++) {
+		std::cout << "Index  " << i << " -> " << floatArray.getAt(i) << std::endl;
+	}
+
 	system("pause");
 	return 0;
 }
